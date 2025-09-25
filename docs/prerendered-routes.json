@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/portfolio": {},
+    "/portfolio/about": {},
+    "/portfolio/contact": {},
+    "/portfolio/education": {},
+    "/portfolio/experience": {},
+    "/portfolio/home": {},
+    "/portfolio/skill": {}
+  }
+}
