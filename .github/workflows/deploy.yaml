@@ -27,7 +27,7 @@ jobs:
       # 4️⃣ Build Angular project
       - name: Build Angular
         run: |
-          ng build --configuration production --output-path=dist/portfolio --base-href=/portfolio/
+           npm run build -- --configuration production --output-path=dist/portfolio --base-href=/portfolio/
 
       # 5️⃣ Deploy to GitHub Pages
       - name: Deploy
