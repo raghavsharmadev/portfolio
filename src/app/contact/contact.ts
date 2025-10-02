@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ContactService } from '../services/contact/contact-service';
 
@@ -19,6 +19,7 @@ export class Contact {
     subject: ['', Validators.required],
     message: ['', Validators.required]
   });
+  isSuccess = signal(false);
 
   onSubmit(): void {
     if (this.contactForm.valid) {
@@ -26,6 +27,7 @@ export class Contact {
         next: (response) => {
           console.log('Form submitted successfully', response);
           this.contactForm.reset();
+          this.isSuccess.set(true);
         },
         error: (error) => {
           console.error('Error submitting form', error);
