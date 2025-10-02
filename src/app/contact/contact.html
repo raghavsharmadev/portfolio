@@ -13,7 +13,7 @@
                 </div>
                 <div class="address">
                     <!-- <ul> -->
-                        <!-- <li>
+                    <!-- <li>
                             <div class="icons icons2">
                                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                             </div>
@@ -21,21 +21,23 @@
                             <a href="#"><span class="__cf_email__" href="mailto:raghavsharma582@gmail.com" target="_blank"
                                     data-cfemail="d9b0adaab4bc99aaacaba3b0b5bebcbcb2f7bab6b4">[email&#160;protected]</span></a>
                         </li> -->
-                        <!-- <li> -->
-                            <div class="icons icons3">
-                                <i class="fa fa-external-link" aria-hidden="true"></i>
-                            </div>
-                            <h3>Social profiles</h3>
-                            <ul class="social list-inline">
-                                <!-- <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <!-- <li> -->
+                    <!-- <div class="icons icons3">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                    </div> -->
+                    <!-- <h3>Social profiles</h3> -->
+                    <ul class="social list-inline">
+                        <!-- <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li> -->
-                                <li class="mx-2"><a href="https://github.com/raghavsharmadev"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></a></li>
-                                <li class="mx-2"><a href="https://www.linkedin.com/in/devraghav/"><i class="fa-brands fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-                            </ul>
-                        <!-- </li>
+                        <!-- <li class="mx-2"><a href="https://github.com/raghavsharmadev"><i
+                                    class="fa-brands fa-github fa-lg" aria-hidden="true"></i></a></li>
+                        <li class="mx-2"><a href="https://www.linkedin.com/in/devraghav/"><i
+                                    class="fa-brands fa-linkedin fa-lg" aria-hidden="true"></i></a></li> -->
+                    </ul>
+                    <!-- </li>
                     </ul> -->
                 </div>
                 <div class="contact">
@@ -48,33 +50,56 @@
                         </div>
                         <p></p>
                     </div>
-                    <form id="contact-form" class="contact-form" name="contact-form" method="post" action="#">
+                    <form id="contact-form" class="contact-form" name="contact-form" [formGroup]="contactForm">
                         <div class="row gy-2">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required="required" placeholder="Full Name">
+                                    <input type="text" class="form-control" required="required" placeholder="Full Name"
+                                        formControlName="fullName">
+                                    @if (contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched) {
+                                    <label for="fullName" class="error">
+                                        Name is required.
+                                    </label>
+                                    }
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input type="email" class="form-control" required="required"
-                                        placeholder="Your email id">
+                                        placeholder="Your email id" formControlName="email">
+                                    @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+                                    <label for="email" class="error">
+                                        Email is required.
+                                    </label>
+                                    }
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required="required" placeholder="Subject">
+                                    <input type="text" class="form-control" required="required" placeholder="Subject"
+                                        formControlName="subject">
+                                    @if (contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched) {
+                                    <label for="subject" class="error">
+                                        Subject is required.
+                                    </label>
+                                    }
                                 </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <textarea name="message" required="required" class="form-control" rows="7"
-                                        placeholder="Your message"></textarea>
+                                        placeholder="Your message" formControlName="message"></textarea>
+                                    @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+                                    <label for="message" class="error">
+                                        Message is required.
+                                    </label>
+                                    }
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group pull-right">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="form-group pull-right col-sm-12 justify-content-center d-flex">
+                                <button type="submit" class="btn btn-success rounded-pill" (click)="onSubmit()"
+                                    [disabled]="!contactForm.valid">Submit</button>
+                            </div>
                         </div>
                     </form>
                 </div>
