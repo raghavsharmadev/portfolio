@@ -51,7 +51,7 @@ This ensures correct asset paths for GitHub Pages deployment.
 
 - [GitHub](https://github.com/raghavsharmadev)
 - [LinkedIn](https://www.linkedin.com/in/devraghav/)
-- For any inquiries, please use the contact form on the website.
+- For any inquiries, please use the [contact form](https://raghavsharmadev.github.io/portfolio/contact) on the website.
 
 ---
 
