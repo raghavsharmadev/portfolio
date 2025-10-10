@@ -20,6 +20,6 @@ export default `<!doctype html>
 
 <body ngcm="">
   <app-root></app-root>
-<script src="scripts-7SWBP3MU.js" defer=""></script><script src="main-UWHLFOXD.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-5C7G2YDG.js"><script src="scripts-7SWBP3MU.js" defer=""></script><script src="main-ON6OBYF6.js" type="module"></script></body>
 
 </html>`;
