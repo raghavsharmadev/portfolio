@@ -11,4 +11,8 @@ export class ContactService {
   addContact(data: any) {
     return this.httpClient.post(baseUrl + addContactUrl, data);
   }
+
+  getAllContacts() {
+    return this.httpClient.get(baseUrl + 'contact/all');
+  }
 }
