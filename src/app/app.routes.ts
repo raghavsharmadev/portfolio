@@ -14,5 +14,7 @@ export const routes: Routes = [
     { path: 'skill', component: Skills },
     { path: 'experience', component: Experience },
     { path: 'education', component: Education },
-    { path: 'contact', component: Contact }
+    { path: 'contact', component: Contact },
+    { path: 'dashboard', loadComponent: () => import('./dashboard/dashboard').then(m => m.Dashboard) },
+    { path: '**', redirectTo: '' }
 ];

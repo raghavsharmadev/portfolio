@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Example row -->
+        @for (contact of allContacts(); track $index) {
+        <tr [id]="contact.id">
+            <td>{{ contact.fullName }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.subject }}</td>
+            <td>{{ contact.message }}</td>
+        </tr>
+        }
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
